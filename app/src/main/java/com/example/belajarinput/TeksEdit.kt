@@ -158,7 +158,9 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         .fillMaxWidth()
                         .padding(top = 16.dp)
                 ) {
+                    gender.forEach { item ->
 
+                    }
                 }
 
                 OutlinedTextField(

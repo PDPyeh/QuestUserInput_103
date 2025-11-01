@@ -47,6 +47,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var nama by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var jenis by remember { mutableStateOf("") }
+    var nikah by remember { mutableStateOf(value = "") }
 
     val gender = listOf("Laki-Laki", "Perempuan")
     val status = listOf("Janda", "Lajang", "Duda")
@@ -197,6 +198,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         nama = textNama
                         jenis = textJK
                         alamat = textAlamat
+                        status = textNikah
                     },
                     enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty() && textJK.isNotEmpty(),
                     modifier = Modifier.fillMaxWidth()

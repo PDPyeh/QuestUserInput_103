@@ -158,14 +158,19 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         .fillMaxWidth()
                         .padding(top = 16.dp)
                 ) {
-                    gender.forEach { item ->
+                    status.forEach { item ->
                         Row (
                             verticalAlignment = Alignment.CenterVertically,
                             modifier = Modifier.selectable(
                                 selected = textNikah == item,
                                 onClick = { textNikah = item }
+                            )
                         ){
-
+                                RadioButton(
+                                    selected = textNikah == item,
+                                    onClick = { textNikah = item }
+                                )
+                                Text(item)
                             }
 
                     }

@@ -1,6 +1,8 @@
 package com.example.belajarinput
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -24,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.dimensionResource
@@ -47,9 +51,19 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     val purpleDark = Color(0xFF6A1FBF)
 
     Column(modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(84.dp)
+                .background(
+                    brush = Brush.verticalGradient(listOf(purple, purpleDark)),
+                    shape = RoundedCornerShape(bottomStart = 0.dp, bottomEnd = 0.dp)
+                )
+
+        )
 
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .padding(20.dp)
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.Top,
@@ -65,7 +79,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     .fillMaxWidth()
             )
 
-            // === Gender pakai Row, cuma ini aja yang horizontal ===
+
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(16.dp),

@@ -33,6 +33,7 @@ import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -84,6 +85,17 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(
+                    text = "Nama Lengkap :",
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 5.dp)
+                        .padding(horizontal = 1.dp),
+                    textAlign = TextAlign.Left
+                )
+
                 OutlinedTextField(
                     value = textNama,
                     onValueChange = { textNama = it },
@@ -92,6 +104,16 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     label = { Text("Nama Lengkap") },
                     modifier = Modifier
                         .fillMaxWidth()
+                )
+
+                Text(
+                    text = "Jenis Kelamin :",
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 1.dp),
+                    textAlign = TextAlign.Left
                 )
 
 

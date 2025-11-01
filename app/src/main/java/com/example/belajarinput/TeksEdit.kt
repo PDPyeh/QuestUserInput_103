@@ -42,12 +42,12 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var textNama by remember { mutableStateOf("") }
     var textAlamat by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
-    var textNikah by remember { mutableStateOf(value = "") }
+    var textNikah by remember { mutableStateOf("") }
 
     var nama by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var jenis by remember { mutableStateOf("") }
-    var nikah by remember { mutableStateOf(value = "") }
+    var nikah by remember { mutableStateOf("") }
 
     val gender = listOf("Laki-Laki", "Perempuan")
     val status = listOf("Janda", "Lajang", "Duda")
@@ -198,9 +198,9 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         nama = textNama
                         jenis = textJK
                         alamat = textAlamat
-                        status = textNikah
+                        nikah = textNikah
                     },
-                    enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty() && textJK.isNotEmpty(),
+                    enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty() && textJK.isNotEmpty() && textNikah.isNotEmpty(),
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(stringResource(id = R.string.submit))
@@ -223,6 +223,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         Text("Nama   : $nama", color = Color.White)
                         Text("Gender : $jenis", color = Color.White)
                         Text("Alamat : $alamat", color = Color.White)
+                        Text("Status : $nikah", color = Color.White)
                     }
                 }
             }

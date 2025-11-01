@@ -159,6 +159,9 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         .padding(top = 16.dp)
                 ) {
                     gender.forEach { item ->
+                        Row (
+
+                        ){  }
 
                     }
                 }

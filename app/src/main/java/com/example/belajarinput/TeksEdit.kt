@@ -91,7 +91,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 5.dp)
+                        .padding(vertical = 1.dp)
                         .padding(horizontal = 1.dp),
                     textAlign = TextAlign.Left
                 )
@@ -112,14 +112,14 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier
                         .fillMaxWidth()
+                        .padding(vertical = 3.dp)
                         .padding(horizontal = 1.dp),
                     textAlign = TextAlign.Left
                 )
 
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(16.dp),
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(6.dp),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 16.dp)

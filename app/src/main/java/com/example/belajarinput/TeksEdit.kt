@@ -71,94 +71,100 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 modifier = Modifier.padding(horizontal = 20.dp)
             )
         }
-
-        Column(
-            modifier = Modifier
-                .padding(20.dp)
-                .fillMaxWidth(),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
+        ElevatedCard(
+            elevation = CardDefaults.elevatedCardElevation(defaultElevation = 6.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFFF8F8F8)),
+            shape = RoundedCornerShape(16.dp),
+            modifier = Modifier.fillMaxWidth()
         ) {
-            OutlinedTextField(
-                value = textNama,
-                onValueChange = { textNama = it },
-                singleLine = true,
-                shape = MaterialTheme.shapes.large,
-                label = { Text("Nama Lengkap") },
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-            )
-
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp)
+                    .padding(20.dp)
+                    .fillMaxWidth(),
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                gender.forEach { item ->
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.selectable(
-                            selected = textJK == item,
-                            onClick = { textJK = item }
-                        )
-                    ) {
-                        RadioButton(
-                            selected = textJK == item,
-                            onClick = { textJK = item }
-                        )
-                        Text(item)
+                OutlinedTextField(
+                    value = textNama,
+                    onValueChange = { textNama = it },
+                    singleLine = true,
+                    shape = MaterialTheme.shapes.large,
+                    label = { Text("Nama Lengkap") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                )
+
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp)
+                ) {
+                    gender.forEach { item ->
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.selectable(
+                                selected = textJK == item,
+                                onClick = { textJK = item }
+                            )
+                        ) {
+                            RadioButton(
+                                selected = textJK == item,
+                                onClick = { textJK = item }
+                            )
+                            Text(item)
+                        }
                     }
                 }
-            }
 
-            OutlinedTextField(
-                value = textAlamat,
-                onValueChange = { textAlamat = it },
-                singleLine = true,
-                label = { Text("Alamat Lengkap") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 12.dp)
-            )
+                OutlinedTextField(
+                    value = textAlamat,
+                    onValueChange = { textAlamat = it },
+                    singleLine = true,
+                    label = { Text("Alamat Lengkap") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 12.dp)
+                )
 
-            HorizontalDivider(
-                modifier = Modifier.padding(vertical = 12.dp),
-                thickness = dimensionResource(id = R.dimen.divider_tipis),
-                color = Color.DarkGray
-            )
+                HorizontalDivider(
+                    modifier = Modifier.padding(vertical = 12.dp),
+                    thickness = dimensionResource(id = R.dimen.divider_tipis),
+                    color = Color.DarkGray
+                )
 
-            Button(
-                onClick = {
-                    nama = textNama
-                    jenis = textJK
-                    alamat = textAlamat
-                },
-                enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty() && textJK.isNotEmpty(),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(stringResource(id = R.string.submit))
-            }
+                Button(
+                    onClick = {
+                        nama = textNama
+                        jenis = textJK
+                        alamat = textAlamat
+                    },
+                    enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty() && textJK.isNotEmpty(),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(stringResource(id = R.string.submit))
+                }
 
-            HorizontalDivider(
-                modifier = Modifier.padding(vertical = 12.dp),
-                thickness = dimensionResource(id = R.dimen.divider_tipis),
-                color = Color.DarkGray
-            )
+                HorizontalDivider(
+                    modifier = Modifier.padding(vertical = 12.dp),
+                    thickness = dimensionResource(id = R.dimen.divider_tipis),
+                    color = Color.DarkGray
+                )
 
-            ElevatedCard(
-                elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.Black),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(110.dp)
-            ) {
-                Column(Modifier.padding(horizontal = 12.dp, vertical = 16.dp)) {
-                    Text("Nama   : $nama", color = Color.White)
-                    Text("Gender : $jenis", color = Color.White)
-                    Text("Alamat : $alamat", color = Color.White)
+                ElevatedCard(
+                    elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.Black),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(110.dp)
+                ) {
+                    Column(Modifier.padding(horizontal = 12.dp, vertical = 16.dp)) {
+                        Text("Nama   : $nama", color = Color.White)
+                        Text("Gender : $jenis", color = Color.White)
+                        Text("Alamat : $alamat", color = Color.White)
+                    }
                 }
             }
         }

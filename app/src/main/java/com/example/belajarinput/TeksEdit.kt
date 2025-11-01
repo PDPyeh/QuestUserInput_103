@@ -141,6 +141,23 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     }
                 }
 
+                Text(
+                    text = "Status Perkawinan :",
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 3.dp)
+                        .padding(horizontal = 1.dp),
+                    textAlign = TextAlign.Left
+                )
+
+                Column(
+
+                ) {
+
+                }
+
                 OutlinedTextField(
                     value = textAlamat,
                     onValueChange = { textAlamat = it },

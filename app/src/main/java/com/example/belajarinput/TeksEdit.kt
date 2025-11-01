@@ -32,7 +32,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun FormDataDiri(modifier: Modifier = Modifier) {
@@ -58,9 +60,17 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 .background(
                     brush = Brush.verticalGradient(listOf(purple, purpleDark)),
                     shape = RoundedCornerShape(bottomStart = 0.dp, bottomEnd = 0.dp)
-                )
-
-        )
+                ),
+                    contentAlignment = Alignment.CenterStart
+        ) {
+            Text(
+                text = "Formulir Pendaftaran",
+                color = Color.White,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier.padding(horizontal = 20.dp)
+            )
+        }
 
         Column(
             modifier = Modifier

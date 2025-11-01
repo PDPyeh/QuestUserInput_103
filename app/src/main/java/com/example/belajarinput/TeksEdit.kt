@@ -153,7 +153,10 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 )
 
                 Column(
-
+                    verticalArrangement = Arrangement.spacedBy(6.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp)
                 ) {
 
                 }
